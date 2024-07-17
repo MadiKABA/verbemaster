@@ -17,11 +17,22 @@ const ResultQuizPage = () => {
   //   const navigate = useNavigate();
   const navigate = useNavigate();
   const [listQuiz, setListQuiz] = useState<Quiz[] | []>([]);
+  const [countValidated, setCountValidated] = useState<number>(0);
+  const [countNotValidated, setCountNotValidated] = useState<number>(0);
   useEffect(() => {
     const fetchPosts = async () => {
       const db = await initDB();
       const localQuiz = await getResults(db);
       if (localQuiz.length > 0) {
+        const validatedCount = localQuiz.filter(
+          (item) => item.is_validated
+        ).length;
+        const notValidatedCount = localQuiz.filter(
+          (item) => !item.is_validated
+        ).length;
+
+        setCountValidated(validatedCount);
+        setCountNotValidated(notValidatedCount);
         setListQuiz(localQuiz);
       }
     };
@@ -45,11 +56,11 @@ const ResultQuizPage = () => {
           <p className="text-white fw-bold">Total Quiz : {listQuiz.length}</p>
           <p>
             Correct Answer :{" "}
-            <span className="text-success fs-3 fw-bold">{2}</span>
+            <span className="text-success fs-3 fw-bold">{countValidated}</span>
           </p>
           <p>
             Incorrect Answer :{" "}
-            <span className="text-danger fs-3 fw-bold">{2}</span>
+            <span className="text-danger fs-3 fw-bold">{countNotValidated}</span>
           </p>
         </div>
         <div className="col-4 d-flex justify-content-center">
