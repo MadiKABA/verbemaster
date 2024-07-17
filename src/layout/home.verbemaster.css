@@ -173,6 +173,10 @@
   padding: 0;
   margin: 0;
 }
+.btn_link{
+  font-size: 16px !important;
+  width: auto !important;
+}
 @keyframes pulse {
   0% {
     transform: scale(1);

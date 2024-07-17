@@ -9,6 +9,7 @@ import {
   saveResulttQuiz,
 } from "../../core/data/db";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 interface NewQuiz {
   id: number;
   quiz: string;
@@ -22,6 +23,7 @@ interface QuizState {
   past_participle: string;
 }
 const QuizPage: React.FC = () => {
+  const navigate = useNavigate();
   const [error, setError] = useState(false);
   const [newQuiz, setNewQuiz] = useState<NewQuiz | null>(null);
   const [lastQuiz, setLastQuiz] = useState<NewQuiz | null>(null);
@@ -226,6 +228,14 @@ const QuizPage: React.FC = () => {
                 onClick={handleSubmit}
               >
                 Next
+              </button>
+            </div>
+            <div className="d-flex justify-content-end px-3">
+              <button
+                onClick={() => navigate("/end_quiz_page")}
+                className="btn_primary py-1 d-flex flex-column justify-content-center align-items-center fw-bold"
+              >
+                End QUIZ
               </button>
             </div>
           </div>
