@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getItemById, getPosts, initDB, savePosts } from "../../core/data/db";
+import { getItemById, getPosts, initDB } from "../../core/data/db";
 interface NewQuiz {
   id: number;
   quiz: string;

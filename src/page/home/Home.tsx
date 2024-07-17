@@ -18,7 +18,7 @@ const Home = () => {
       const localPosts = await getPosts(db);
       if (localPosts.length > 0) {
         setPosts(localPosts);
-        console.log(localPosts);
+        console.log(localPosts,posts);
         console.log("local quiz : ",data);
       } else {
         await savePosts(db, data);
