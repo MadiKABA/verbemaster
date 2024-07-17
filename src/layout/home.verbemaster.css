@@ -53,7 +53,7 @@
   font-weight: bold;
   font-size: 32px;
   width: 100%;
-  transform: skew(-2deg);
+  /* transform: skew(-2deg); */
   color: #0e4ca5 !important;
   animation: pulse 2s infinite;
 }
@@ -61,7 +61,7 @@
   font-weight: bold;
   font-size: 32px;
   width: 100%;
-  transform: skew(-2deg);
+  /* transform: skew(-2deg); */
   color: #0e4ca5 !important;
   /* animation: pulse 2s infinite; */
 }
@@ -120,7 +120,7 @@
   font-weight: bold;
   font-size: 20px;
   width: 100%;
-  transform: skew(-2deg);
+  /* transform: skew(-2deg); */
   background-color: #161559 !important;
   margin-top: 20px;
   color: white;
