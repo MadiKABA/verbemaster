@@ -9,8 +9,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'My PWA',
-        short_name: 'PWA',
+        name: 'Verbe Master',
+        short_name: 'VerbeMaster',
         description: 'My Awesome PWA',
         theme_color: '#ffffff',
         icons: [
