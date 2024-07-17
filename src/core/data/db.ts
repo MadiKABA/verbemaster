@@ -6,8 +6,20 @@ const STORE_QUIZ = "quizstore";
 const STORE_LASTQUIZ = "lastquizstore";
 const STORE_RESULTQUIZ = "resultquizstore";
 
-interface Post {
+interface NewQuiz {
   id: number;
+  quiz: string;
+  answer: string;
+  past_tense: string;
+  past_participle: string;
+}
+interface ResultQuiz {
+  id: number;
+  quiz: string;
+  answer: string;
+  past_tense: string;
+  past_participle: string;
+  is_validated: boolean;
   // Define other fields of your post object here
 }
 
@@ -27,23 +39,40 @@ export const initDB = async (): Promise<IDBPDatabase> => {
   });
 };
 
-export const getPosts = async (db: IDBPDatabase): Promise<Post[]> => {
+export const getPosts = async (db: IDBPDatabase): Promise<NewQuiz[]> => {
   return db.getAll(STORE_QUIZ);
 };
 
-export const savePosts = async (db: IDBPDatabase, posts: Post[]): Promise<void> => {
+export const savePosts = async (db: IDBPDatabase, posts: NewQuiz[]): Promise<void> => {
   const tx = db.transaction(STORE_QUIZ, "readwrite");
   posts.forEach((post) => tx.store.put(post));
   await tx.done;
 };
-export const saveLastQuiz = async (db: IDBPDatabase, posts: Post[]): Promise<void> => {
+export const saveLastQuiz = async (db: IDBPDatabase, post: NewQuiz): Promise<void> => {
   const tx = db.transaction(STORE_LASTQUIZ, "readwrite");
-  posts.forEach((post) => tx.store.put(post));
+  await tx.store.put(post);
   await tx.done;
 };
-
-export const clearPosts = async (db: IDBPDatabase): Promise<void> => {
-  const tx = db.transaction(STORE_QUIZ, "readwrite");
+export const saveResulttQuiz = async (db: IDBPDatabase, resultQuiz: ResultQuiz): Promise<void> => {
+  const tx = db.transaction(STORE_RESULTQUIZ, "readwrite");
+  await tx.store.put(resultQuiz);
+  await tx.done;
+};
+export const clearLastQuiz = async (db: IDBPDatabase): Promise<void> => {
+  const tx = db.transaction(STORE_LASTQUIZ, "readwrite");
+  await tx.store.clear();
+  await tx.done;
+};
+export const getLastQuiz = async (db: IDBPDatabase): Promise<NewQuiz[]> => {
+  return db.getAll(STORE_LASTQUIZ);
+};
+export const clearLasttQuiz = async (db: IDBPDatabase): Promise<void> => {
+  const tx = db.transaction(STORE_LASTQUIZ, "readwrite");
+  await tx.store.clear();
+  await tx.done;
+};
+export const clearResultQuiz = async (db: IDBPDatabase): Promise<void> => {
+  const tx = db.transaction(STORE_RESULTQUIZ, "readwrite");
   await tx.store.clear();
   await tx.done;
 };

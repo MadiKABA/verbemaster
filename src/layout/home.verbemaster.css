@@ -41,7 +41,7 @@
     circle,
     rgba(255, 255, 255, 0.7) 10%,
     rgba(255, 255, 255, 0.8) 20%,
-    rgba(255, 255, 255, .9) 70%
+    rgba(255, 255, 255, 0.9) 70%
   );
   padding: 20px;
   border-top-left-radius: 20px !important;
@@ -127,6 +127,45 @@
   border-radius: 7px;
   outline: none;
   padding: 5px;
+}
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 40px; /* Ajout de marges à gauche et à droite */
+}
+
+.popup {
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.popup p {
+  margin: 0;
+  padding: 10px 0;
+  font-weight: 700;
+}
+
+.popup button {
+  background-color: #161559; /* Vert */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 2px;
+  cursor: pointer;
 }
 @keyframes pulse {
   0% {

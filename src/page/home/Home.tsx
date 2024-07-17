@@ -1,15 +1,27 @@
 import { useEffect, useState } from "react";
 import img_illustration from "../../assets/images/illustration-home-page.png";
 import { Icon } from "@iconify/react";
-import { getPosts, initDB, savePosts } from "../../core/data/db";
-import data from '../../core/data/data.json';
+import {
+  clearResultQuiz,
+  getPosts,
+  initDB,
+  savePosts,
+} from "../../core/data/db";
+import data from "../../core/data/data.json";
+import { useNavigate } from "react-router-dom";
 interface quiz {
   id: number;
   // Autres champs de votre objet Post
 }
+
 const Home = () => {
-  
+  const navigate = useNavigate();
   const [posts, setPosts] = useState<quiz[]>([]);
+  const handleQuiz = async () => {
+    const db = await initDB();
+    await clearResultQuiz(db);
+    navigate("/quiz_page");
+  };
   useEffect(() => {
     const fetchPosts = async () => {
       const db = await initDB();
@@ -18,8 +30,8 @@ const Home = () => {
       const localPosts = await getPosts(db);
       if (localPosts.length > 0) {
         setPosts(localPosts);
-        console.log(localPosts,posts);
-        console.log("local quiz : ",data);
+        console.log(localPosts, posts);
+        console.log("local quiz : ", data);
       } else {
         await savePosts(db, data);
         console.log(localPosts.length);
@@ -45,7 +57,10 @@ const Home = () => {
         <div className="row flex-grow-1">
           <div className="col-6">
             <div className=" d-flex align-items-center flex-column">
-              <button className="btn_primary btn_start_quiz d-flex flex-column justify-content-center align-items-center">
+              <button
+                onClick={handleQuiz}
+                className="btn_primary btn_start_quiz d-flex flex-column justify-content-center align-items-center"
+              >
                 <span>
                   <Icon icon="ic:outline-quiz" color="#3d83d9" width="48" />
                 </span>
