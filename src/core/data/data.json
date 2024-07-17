@@ -1,0 +1,548 @@
+[
+    {
+        "id": 1,
+        "quiz": "Swear",
+        "answer": "Jurer",
+        "past_tense": "Swore",
+        "past_participle": "Sworn"
+    },
+    {
+        "id": 2,
+        "quiz": "Awake",
+        "answer": "Se réveille",
+        "past_tense": "Awoke",
+        "past_participle": "Awoken"
+    },
+    {
+        "id": 3,
+        "quiz": "Strew",
+        "answer": "Éparpiller",
+        "past_tense": "Strewed",
+        "past_participle": "Strewn"
+    },
+    {
+        "id": 4,
+        "quiz": "Strive",
+        "answer": "S’efforcer",
+        "past_tense": "Strove",
+        "past_participle": "Striven"
+    },
+    {
+        "id": 5,
+        "quiz": "Begin",
+        "answer": "Commencer",
+        "past_tense": "Began",
+        "past_participle": "Begun"
+    },
+    {
+        "id": 6,
+        "quiz": "Bend",
+        "answer": "Se courber",
+        "past_tense": "Bent",
+        "past_participle": "Bent"
+    },
+    {
+        "id": 7,
+        "quiz": "Swell",
+        "answer": "Enfler",
+        "past_tense": "Swelled",
+        "past_participle": "Swollen"
+    },
+    {
+        "id": 8,
+        "quiz": "Saw",
+        "answer": "Scier",
+        "past_tense": "Sawed",
+        "past_participle": "Sawn"
+    },
+    {
+        "id": 9,
+        "quiz": "Quit",
+        "answer": "Arrêter",
+        "past_tense": "Quit",
+        "past_participle": "Quit"
+    },
+    {
+        "id": 10,
+        "quiz": "Shoot",
+        "answer": "Fusiller",
+        "past_tense": "Shot",
+        "past_participle": "Shot"
+    },
+    {
+        "id": 11,
+        "quiz": "Shake",
+        "answer": "Secouer",
+        "past_tense": "Shook",
+        "past_participle": "Shaken"
+    },
+    {
+        "id": 12,
+        "quiz": "Split",
+        "answer": "Diviser",
+        "past_tense": "Split",
+        "past_participle": "Split"
+    },
+    {
+        "id": 13,
+        "quiz": "Take",
+        "answer": "Prendre",
+        "past_tense": "Took",
+        "past_participle": "Taken"
+    },
+    {
+        "id": 14,
+        "quiz": "Become",
+        "answer": "Devenir",
+        "past_tense": "Became",
+        "past_participle": "Become"
+    },
+    {
+        "id": 15,
+        "quiz": "Think",
+        "answer": "Penser",
+        "past_tense": "Thought",
+        "past_participle": "Thought"
+    },
+    {
+        "id": 16,
+        "quiz": "Lose",
+        "answer": "Perdre",
+        "past_tense": "Lost",
+        "past_participle": "Lost"
+    },
+    {
+        "id": 17,
+        "quiz": "Bite",
+        "answer": "Mordre",
+        "past_tense": "Bit",
+        "past_participle": "Bitten"
+    },
+    {
+        "id": 18,
+        "quiz": "Spend",
+        "answer": "Dépenser",
+        "past_tense": "Spent",
+        "past_participle": "Spent"
+    },
+    {
+        "id": 19,
+        "quiz": "Fly",
+        "answer": "Voler (dans les airs)",
+        "past_tense": "Flew",
+        "past_participle": "Flown"
+    },
+    {
+        "id": 20,
+        "quiz": "Do",
+        "answer": "Faire",
+        "past_tense": "Did",
+        "past_participle": "Done"
+    },
+    {
+        "id": 21,
+        "quiz": "Spring",
+        "answer": "Surgir",
+        "past_tense": "Sprang",
+        "past_participle": "Sprung"
+    },
+    {
+        "id": 22,
+        "quiz": "Bid",
+        "answer": "Faire une offre",
+        "past_tense": "Bid",
+        "past_participle": "Bid"
+    },
+    {
+        "id": 23,
+        "quiz": "Buy",
+        "answer": "Acheter",
+        "past_tense": "Bought",
+        "past_participle": "Bought"
+    },
+    {
+        "id": 24,
+        "quiz": "Stand",
+        "answer": "Être debout",
+        "past_tense": "Stood",
+        "past_participle": "Stood"
+    },
+    {
+        "id": 25,
+        "quiz": "Fling",
+        "answer": "Lancer",
+        "past_tense": "Flung",
+        "past_participle": "Flung"
+    },
+    {
+        "id": 26,
+        "quiz": "Broadcast",
+        "answer": "Émettre",
+        "past_tense": "Broadcast",
+        "past_participle": "Broadcast"
+    },
+    {
+        "id": 27,
+        "quiz": "Spell",
+        "answer": "Orthographier",
+        "past_tense": "Spelt",
+        "past_participle": "Spelt"
+    },
+    {
+        "id": 28,
+        "quiz": "Can",
+        "answer": "Pouvoir",
+        "past_tense": "Could",
+        "past_participle": "Could"
+    },
+    {
+        "id": 29,
+        "quiz": "Lay",
+        "answer": "Poser",
+        "past_tense": "Laid",
+        "past_participle": "Laid"
+    },
+    {
+        "id": 30,
+        "quiz": "Dream",
+        "answer": "Rêver",
+        "past_tense": "Dreamt",
+        "past_participle": "Dreamt"
+    },
+    {
+        "id": 31,
+        "quiz": "Let",
+        "answer": "Permettre",
+        "past_tense": "Let",
+        "past_participle": "Let"
+    },
+    {
+        "id": 32,
+        "quiz": "Shoe",
+        "answer": "Chausser",
+        "past_tense": "Shod",
+        "past_participle": "Shod"
+    },
+    {
+        "id": 33,
+        "quiz": "Thrive",
+        "answer": "Prospérer",
+        "past_tense": "Throve",
+        "past_participle": "Thriven"
+    },
+    {
+        "id": 34,
+        "quiz": "Wake",
+        "answer": "Réveiller",
+        "past_tense": "Woke",
+        "past_participle": "Woken"
+    },
+    {
+        "id": 35,
+        "quiz": "Drink",
+        "answer": "Boire",
+        "past_tense": "Drank",
+        "past_participle": "Drunk"
+    },
+    {
+        "id": 36,
+        "quiz": "Run",
+        "answer": "Courir",
+        "past_tense": "Ran",
+        "past_participle": "Run"
+    },
+    {
+        "id": 37,
+        "quiz": "Break",
+        "answer": "Casser",
+        "past_tense": "Broke",
+        "past_participle": "Broken"
+    },
+    {
+        "id": 38,
+        "quiz": "Plead",
+        "answer": "Supplier",
+        "past_tense": "Pleaded",
+        "past_participle": "Pled"
+    },
+    {
+        "id": 39,
+        "quiz": "Choose",
+        "answer": "Choisir",
+        "past_tense": "Chose",
+        "past_participle": "Chosen"
+    },
+    {
+        "id": 40,
+        "quiz": "Eat",
+        "answer": "Manger",
+        "past_tense": "Ate",
+        "past_participle": "Eaten"
+    },
+    {
+        "id": 41,
+        "quiz": "Spit",
+        "answer": "Cracher",
+        "past_tense": "Spit",
+        "past_participle": "Spit"
+    },
+    {
+        "id": 42,
+        "quiz": "Relay",
+        "answer": "Relayer",
+        "past_tense": "Relaid",
+        "past_participle": "Relaid"
+    },
+    {
+        "id": 43,
+        "quiz": "Slit",
+        "answer": "Fendre",
+        "past_tense": "Slit",
+        "past_participle": "Slit"
+    },
+    {
+        "id": 44,
+        "quiz": "Find",
+        "answer": "Trouver",
+        "past_tense": "Found",
+        "past_participle": "Found"
+    },
+    {
+        "id": 45,
+        "quiz": "Hit",
+        "answer": "Frapper",
+        "past_tense": "Hit",
+        "past_participle": "Hit"
+    },
+    {
+        "id": 46,
+        "quiz": "Spread",
+        "answer": "Répandre",
+        "past_tense": "Spread",
+        "past_participle": "Spread"
+    },
+    {
+        "id": 47,
+        "quiz": "Make",
+        "answer": "Faire",
+        "past_tense": "Made",
+        "past_participle": "Made"
+    },
+    {
+        "id": 48,
+        "quiz": "Hold",
+        "answer": "Tenir",
+        "past_tense": "Held",
+        "past_participle": "Held"
+    },
+    {
+        "id": 49,
+        "quiz": "Bleed",
+        "answer": "Saigner",
+        "past_tense": "Bled",
+        "past_participle": "Bled"
+    },
+    {
+        "id": 50,
+        "quiz": "Speak",
+        "answer": "Parler",
+        "past_tense": "Spoke",
+        "past_participle": "Spoken"
+    },
+    {
+        "id": 51,
+        "quiz": "Teach",
+        "answer": "Enseigner",
+        "past_tense": "Taught",
+        "past_participle": "Taught"
+    },
+    {
+        "id": 52,
+        "quiz": "Hide",
+        "answer": "Cacher",
+        "past_tense": "Hid",
+        "past_participle": "Hidden"
+    },
+    {
+        "id": 53,
+        "quiz": "Make",
+        "answer": "Préparer",
+        "past_tense": "Made",
+        "past_participle": "Made"
+    },
+    {
+        "id": 54,
+        "quiz": "Hit",
+        "answer": "Frapper",
+        "past_tense": "Hit",
+        "past_participle": "Hit"
+    },
+    {
+        "id": 55,
+        "quiz": "Slay",
+        "answer": "Tuer",
+        "past_tense": "Slew",
+        "past_participle": "Slain"
+    },
+    {
+        "id": 56,
+        "quiz": "Catch",
+        "answer": "Attraper",
+        "past_tense": "Caught",
+        "past_participle": "Caught"
+    },
+    {
+        "id": 57,
+        "quiz": "Thrust",
+        "answer": "Enfoncer",
+        "past_tense": "Thrust",
+        "past_participle": "Thrust"
+    },
+    {
+        "id": 58,
+        "quiz": "Flee",
+        "answer": "Fuir",
+        "past_tense": "Fled",
+        "past_participle": "Fled"
+    },
+    {
+        "id": 59,
+        "quiz": "Learn",
+        "answer": "Apprendre",
+        "past_tense": "Learned",
+        "past_participle": "Learnt"
+    },
+    {
+        "id": 60,
+        "quiz": "Spin",
+        "answer": "Tourner",
+        "past_tense": "Spun",
+        "past_participle": "Spun"
+    },
+    {
+        "id": 61,
+        "quiz": "Lead",
+        "answer": "Mener",
+        "past_tense": "Led",
+        "past_participle": "Led"
+    },
+    {
+        "id": 62,
+        "quiz": "Feed",
+        "answer": "Nourrir",
+        "past_tense": "Fed",
+        "past_participle": "Fed"
+    },
+    {
+        "id": 63,
+        "quiz": "Show",
+        "answer": "Montrer",
+        "past_tense": "Showed",
+        "past_participle": "Shown"
+    },
+    {
+        "id": 64,
+        "quiz": "Preset",
+        "answer": "Pré-régler",
+        "past_tense": "Preset",
+        "past_participle": "Preset"
+    },
+    {
+        "id": 65,
+        "quiz": "Steal",
+        "answer": "Voler",
+        "past_tense": "Stole",
+        "past_participle": "Stolen"
+    },
+    {
+        "id": 66,
+        "quiz": "Prove",
+        "answer": "Prouver",
+        "past_tense": "Proved",
+        "past_participle": "Proven"
+    },
+    {
+        "id": 67,
+        "quiz": "Fight",
+        "answer": "Se battre",
+        "past_tense": "Fought",
+        "past_participle": "Fought"
+    },
+    {
+        "id": 68,
+        "quiz": "Stick",
+        "answer": "Coller",
+        "past_tense": "Stuck",
+        "past_participle": "Stuck"
+    },
+    {
+        "id": 69,
+        "quiz": "Creep",
+        "answer": "Ramper",
+        "past_tense": "Crept",
+        "past_participle": "Crept"
+    },
+    {
+        "id": 70,
+        "quiz": "Cut",
+        "answer": "Couper",
+        "past_tense": "Cut",
+        "past_participle": "Cut"
+    },
+    {
+        "id": 71,
+        "quiz": "Bet",
+        "answer": "Parier",
+        "past_tense": "Bet",
+        "past_participle": "Bet"
+    },
+    {
+        "id": 72,
+        "quiz": "Write",
+        "answer": "Écrire",
+        "past_tense": "Wrote",
+        "past_participle": "Written"
+    },
+    {
+        "id": 73,
+        "quiz": "Bear",
+        "answer": "Supporter",
+        "past_tense": "Bore",
+        "past_participle": "Born"
+    },
+    {
+        "id": 74,
+        "quiz": "Slink",
+        "answer": "Se faufiler",
+        "past_tense": "Slunk",
+        "past_participle": "Slunk"
+    },
+    {
+        "id": 75,
+        "quiz": "Hear",
+        "answer": "Entendre",
+        "past_tense": "Heard",
+        "past_participle": "Heard"
+    },
+    {
+        "id": 76,
+        "quiz": "Weep",
+        "answer": "Pleurer",
+        "past_tense": "Wept",
+        "past_participle": "Wept"
+    },
+    {
+        "id": 77,
+        "quiz": "Ride",
+        "answer": "Monter (vélo cheval)",
+        "past_tense": "Rode",
+        "past_participle": "Ridden"
+    },
+    {
+        "id": 78,
+        "quiz": "Leave",
+        "answer": "Partir",
+        "past_tense": "Left",
+        "past_participle": "Left"
+    }
+]
