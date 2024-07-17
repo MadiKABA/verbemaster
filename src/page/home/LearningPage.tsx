@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 
 import { getPosts, initDB } from "../../core/data/db";
 import data from "../../core/data/data.json";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Icon } from "@iconify/react";
+
 interface Quiz {
   id: number;
   quiz: string;
@@ -12,7 +14,7 @@ interface Quiz {
 }
 
 const LearningPage = () => {
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
   const [listQuiz, setListQuiz] = useState<Quiz[]>([]);
   const [listQuizFiltred, setListQuizFiltered] = useState<Quiz[]>([]);
 
@@ -45,7 +47,21 @@ const LearningPage = () => {
     fetchPosts();
   }, []);
   return (
-    <div className="position-relative pt-5" id="home_page">
+    <div className="position-relative" id="home_page">
+      <div className=" d-flex justify-content-between align-items-center px-2 py-3">
+        <button
+          onClick={() => navigate("/")}
+          className="btn_primary py-1 d-flex flex-column justify-content-center align-items-center"
+        >
+          <Icon icon="ep:back" color="#3d83d9" width="24" />
+        </button>
+        <button
+          onClick={() => navigate("/")}
+          className="btn_primary py-1 d-flex flex-column justify-content-center align-items-center fw-bold"
+        >
+          Add New QUIZ
+        </button>
+      </div>
       <div className="mb-3">
         <h1 className="title_home_page">Learn</h1>
       </div>

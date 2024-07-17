@@ -167,6 +167,12 @@
   margin: 10px 2px;
   cursor: pointer;
 }
+.content_text_result_page p{
+  color: white;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
 @keyframes pulse {
   0% {
     transform: scale(1);

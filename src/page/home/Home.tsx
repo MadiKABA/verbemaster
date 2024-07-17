@@ -87,7 +87,10 @@ const Home = () => {
           </div>
           <div className="col-12 pt-0 mt-0">
             <div className=" d-flex align-items-center flex-column">
-              <button className="btn_primary btn_learn_quiz d-flex flex-column justify-content-center align-items-center">
+              <button
+                onClick={() => navigate("/result_page")}
+                className="btn_primary btn_learn_quiz d-flex flex-column justify-content-center align-items-center"
+              >
                 <span>
                   <Icon
                     icon="fa6-solid:ranking-star"

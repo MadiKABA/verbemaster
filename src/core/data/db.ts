@@ -53,6 +53,9 @@ export const saveLastQuiz = async (db: IDBPDatabase, post: NewQuiz): Promise<voi
   await tx.store.put(post);
   await tx.done;
 };
+export const getResults = async (db: IDBPDatabase): Promise<ResultQuiz[]> => {
+  return db.getAll(STORE_RESULTQUIZ);
+};
 export const saveResulttQuiz = async (db: IDBPDatabase, resultQuiz: ResultQuiz): Promise<void> => {
   const tx = db.transaction(STORE_RESULTQUIZ, "readwrite");
   await tx.store.put(resultQuiz);
