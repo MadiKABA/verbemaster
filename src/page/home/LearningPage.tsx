@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { clearResultQuiz, getPosts, initDB } from "../../core/data/db";
+import { getPosts, initDB } from "../../core/data/db";
 import data from "../../core/data/data.json";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 interface Quiz {
   id: number;
   quiz: string;
@@ -12,7 +12,7 @@ interface Quiz {
 }
 
 const LearningPage = () => {
-  const navigate = useNavigate();
+  //   const navigate = useNavigate();
   const [listQuiz, setListQuiz] = useState<Quiz[]>([]);
   const [listQuizFiltred, setListQuizFiltered] = useState<Quiz[]>([]);
 
@@ -72,7 +72,7 @@ const LearningPage = () => {
               </tr>
             </thead>
             <tbody>
-              {listQuizFiltred.length !== 0 ? (
+              {listQuizFiltred.length !== 0 || listQuiz.length !== 0 ? (
                 listQuizFiltred.map((quiz, index) => (
                   <tr key={index}>
                     <td>{quiz.quiz}</td>
