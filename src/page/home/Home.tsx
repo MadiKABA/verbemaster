@@ -47,7 +47,7 @@ const Home = () => {
       <div className="row m-0 p-0">
         <div className="col-8 content_text_home_page">
           <h2>Welcome</h2>
-          <p>Master irregular verbs in no time!</p>
+          <p>Master irregular verbs in no time while having fun!</p>
         </div>
         <div className="col-4 d-flex justify-content-center">
           <img src={img_illustration} className="img_illustration_home_page" />
@@ -70,7 +70,10 @@ const Home = () => {
           </div>
           <div className="col-6">
             <div className=" d-flex align-items-center flex-column">
-              <button className="btn_primary btn_learn_quiz d-flex flex-column justify-content-center align-items-center">
+              <button
+                onClick={() => navigate("/learning_page")}
+                className="btn_primary btn_learn_quiz d-flex flex-column justify-content-center align-items-center"
+              >
                 <span>
                   <Icon
                     icon="fluent-mdl2:learning-tools"
