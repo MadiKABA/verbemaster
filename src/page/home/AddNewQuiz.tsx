@@ -14,9 +14,6 @@ interface FormValues {
     past_participle: string;
   }[];
 }
-interface quiz {
-  id: number;
-}
 const AddNewQuiz: React.FC = () => {
   const navigate = useNavigate();
   const [idLastQuiz, setIdLastQuiz] = useState<number>(0);

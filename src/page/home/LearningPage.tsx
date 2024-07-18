@@ -21,7 +21,7 @@ const LearningPage = () => {
   const [filter, setFilter] = useState("");
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const currentFilter = e.target.value.toLowerCase();
-    const filteredData = data.filter(
+    const filteredData = listQuiz.filter(
       (item) =>
         item.quiz.toLowerCase().includes(currentFilter) ||
         item.answer.toLowerCase().includes(currentFilter) ||
@@ -34,14 +34,13 @@ const LearningPage = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const db = await initDB();
-
-      // Essayer de récupérer les posts depuis IndexedDB
       const localQuiz = await getPosts(db);
       if (localQuiz.length > 0) {
         setListQuiz(localQuiz);
         setListQuizFiltered(localQuiz);
       } else {
         setListQuiz(data);
+        setListQuizFiltered(data);
       }
     };
     fetchPosts();

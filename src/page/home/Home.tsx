@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import img_illustration from "../../assets/images/illustration-home-page.png";
 import { Icon } from "@iconify/react";
 import {
+  clearPost,
   clearResultQuiz,
   getPosts,
   initDB,
@@ -9,14 +10,9 @@ import {
 } from "../../core/data/db";
 import data from "../../core/data/data.json";
 import { useNavigate } from "react-router-dom";
-interface quiz {
-  id: number;
-  // Autres champs de votre objet Post
-}
 
 const Home = () => {
   const navigate = useNavigate();
-  const [posts, setPosts] = useState<quiz[]>([]);
   const handleQuiz = async () => {
     const db = await initDB();
     await clearResultQuiz(db);
@@ -26,9 +22,8 @@ const Home = () => {
     const fetchPosts = async () => {
       const db = await initDB();
       const localPosts = await getPosts(db);
-      if (localPosts.length > 0 || localPosts.length < data.length) {
-        setPosts(localPosts);
-      } else {
+      if (localPosts.length === 0 || localPosts.length < data.length) {
+        await clearPost(db);
         await savePosts(db, data);
       }
     };
