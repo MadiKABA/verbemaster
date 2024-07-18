@@ -27,6 +27,7 @@ const QuizPage: React.FC = () => {
   const [error, setError] = useState(false);
   const [newQuiz, setNewQuiz] = useState<NewQuiz | null>(null);
   const [lastQuiz, setLastQuiz] = useState<NewQuiz | null>(null);
+  const [listQuiz, setListQuiz] = useState<NewQuiz[]>([]);
   const [attempts, setAttempts] = useState<number>(0);
   const [closePopup, setClosePopup] = useState<boolean>(false);
   const [answerQuiz, setAnswerQuiz] = useState<QuizState>({
@@ -37,8 +38,11 @@ const QuizPage: React.FC = () => {
   useEffect(() => {
     const fetchFirstQuiz = async () => {
       const db = await initDB();
+      const localQuiz = await getPosts(db);
       const valueLastQuiz: NewQuiz[] = await getLastQuiz(db);
-      console.log(valueLastQuiz[0]);
+      if (localQuiz.length > 0) {
+        setListQuiz(localQuiz);
+      }
       if (valueLastQuiz.length > 0) {
         setNewQuiz(valueLastQuiz[0]);
         setLastQuiz(valueLastQuiz[0]);
@@ -48,7 +52,6 @@ const QuizPage: React.FC = () => {
           if (result) {
             setNewQuiz(result);
             setLastQuiz(result);
-            console.log(result);
           }
         }
       }
@@ -98,16 +101,20 @@ const QuizPage: React.FC = () => {
           await saveResulttQuiz(db, resultQuiz);
           await clearLastQuiz(db);
           await saveLastQuiz(db, newQuiz);
-          const result = await getItemById(newQuiz.id + 1);
-          if (result) {
-            setNewQuiz(result);
-            setLastQuiz(result);
-            setAnswerQuiz({
-              answer: "",
-              past_participle: "",
-              past_tense: "",
-            });
-            console.log("result next: ", result);
+          if (listQuiz.length < newQuiz.id + 1) {
+            await clearLastQuiz(db);
+            navigate("/end_quiz_page");
+          } else {
+            const result = await getItemById(newQuiz.id + 1);
+            if (result) {
+              setNewQuiz(result);
+              setLastQuiz(result);
+              setAnswerQuiz({
+                answer: "",
+                past_participle: "",
+                past_tense: "",
+              });
+            }
           }
         } else {
           const db = await initDB();
@@ -117,29 +124,34 @@ const QuizPage: React.FC = () => {
           } else if (attempts + 1 === 2) {
             setClosePopup(true);
           } else if (attempts + 1 === 3) {
-            toast.error("OVER 😞😞😞😞");
-            setAnswerQuiz({
-              answer: "",
-              past_participle: "",
-              past_tense: "",
-            });
-            const resultQuiz = {
-              id: newQuiz.id,
-              quiz: newQuiz.quiz,
-              answer: newQuiz.answer,
-              past_tense: newQuiz.past_tense,
-              past_participle: newQuiz.past_participle,
-              is_validated: false,
-            };
-            await saveResulttQuiz(db, resultQuiz);
-            await clearLastQuiz(db);
-            await saveLastQuiz(db, newQuiz);
-            const result = await getItemById(newQuiz.id + 1);
-            if (result) {
-              setNewQuiz(result);
-              setLastQuiz(result);
+            if (listQuiz.length < newQuiz.id + 1) {
+              await clearLastQuiz(db);
+              navigate("/end_quiz_page");
+            } else {
+              toast.error("OVER 😞😞😞😞");
+              setAnswerQuiz({
+                answer: "",
+                past_participle: "",
+                past_tense: "",
+              });
+              const resultQuiz = {
+                id: newQuiz.id,
+                quiz: newQuiz.quiz,
+                answer: newQuiz.answer,
+                past_tense: newQuiz.past_tense,
+                past_participle: newQuiz.past_participle,
+                is_validated: false,
+              };
+              await saveResulttQuiz(db, resultQuiz);
+              await clearLastQuiz(db);
+              await saveLastQuiz(db, newQuiz);
+              const result = await getItemById(newQuiz.id + 1);
+              if (result) {
+                setNewQuiz(result);
+                setLastQuiz(result);
+              }
+              setAttempts(0);
             }
-            setAttempts(0);
           }
         }
       }
