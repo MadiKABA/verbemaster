@@ -37,7 +37,7 @@ const Home = () => {
       <div className="row m-0 p-0">
         <div className="col-8 content_text_home_page">
           <h2>Welcome</h2>
-          <p>Master irregular verbs in no time while having fun!</p>
+          <p>Master irregular verbs in a timeframe while having fun.</p>
         </div>
         <div className="col-4 d-flex justify-content-center">
           <img src={img_illustration} className="img_illustration_home_page" />

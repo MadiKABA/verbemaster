@@ -9,14 +9,14 @@
     {
         "id": 2,
         "quiz": "Awake",
-        "answer": "Se réveille",
+        "answer": "Se réveiller",
         "past_tense": "Awoke",
         "past_participle": "Awoken"
     },
     {
         "id": 3,
         "quiz": "Strew",
-        "answer": "Éparpiller",
+        "answer": "Eparpiller",
         "past_tense": "Strewed",
         "past_participle": "Strewn"
     },
@@ -30,7 +30,7 @@
     {
         "id": 5,
         "quiz": "Begin",
-        "answer": "Débuter",
+        "answer": "Commencer",
         "past_tense": "Began",
         "past_participle": "Begun"
     },
@@ -177,7 +177,7 @@
     {
         "id": 26,
         "quiz": "Broadcast",
-        "answer": "Émettre",
+        "answer": "Emettre",
         "past_tense": "Broadcast",
         "past_participle": "Broadcast"
     },
@@ -394,7 +394,7 @@
     {
         "id": 57,
         "quiz": "Mean",
-        "answer": "Vouloir dire",
+        "answer": "Signifier",
         "past_tense": "Meant",
         "past_participle": "Meant"
     },
@@ -422,7 +422,7 @@
     {
         "id": 61,
         "quiz": "Strew",
-        "answer": "Éparpiller",
+        "answer": "Eparpiller",
         "past_tense": "Strewed",
         "past_participle": "Strewn"
     },
@@ -583,7 +583,7 @@
     {
         "id": 84,
         "quiz": "Broadcast",
-        "answer": "Émettre",
+        "answer": "Emettre",
         "past_tense": "Broadcast",
         "past_participle": "Broadcast"
     },
@@ -751,7 +751,7 @@
     {
         "id": 108,
         "quiz": "Tread",
-        "answer": "Fouler aux pieds",
+        "answer": "Piétiner",
         "past_tense": "Trod",
         "past_participle": "Trod"
     },
@@ -799,10 +799,10 @@
     },
     {
         "id": 115,
-        "quiz": "Mean",
-        "answer": "Vouloir dire",
-        "past_tense": "Meant",
-        "past_participle": "Meant"
+        "quiz": "Chide",
+        "answer": "Réprimande",
+        "past_tense": "Chid",
+        "past_participle": "chiden"
     },
     {
         "id": 116,
@@ -810,5 +810,68 @@
         "answer": "Coller",
         "past_tense": "Stuck",
         "past_participle": "Stuck"
+    },
+    {
+        "id": 117,
+        "quiz": "Meet",
+        "answer": "Rencontrer",
+        "past_tense": "met",
+        "past_participle": "met"
+    },
+    {
+        "id": 118,
+        "quiz": "Leave",
+        "answer": "Partir",
+        "past_tense": "left",
+        "past_participle": "left"
+    },
+    {
+        "id": 119,
+        "quiz": "Weep",
+        "answer": "Pleurer",
+        "past_tense": "wept",
+        "past_participle": "wept"
+    },
+    {
+        "id": 120,
+        "quiz": "Bear",
+        "answer": "Supporter",
+        "past_tense": "bore",
+        "past_participle": "born"
+    },
+    {
+        "id": 121,
+        "quiz": "Bet",
+        "answer": "Parier",
+        "past_tense": "bet",
+        "past_participle": "bet"
+    },
+    {
+        "id": 122,
+        "quiz": "Lend",
+        "answer": "Prêter",
+        "past_tense": "lent",
+        "past_participle": "lent"
+    },
+    {
+        "id": 123,
+        "quiz": "Speed",
+        "answer": "Accélérer",
+        "past_tense": "sped",
+        "past_participle": "sped"
+    },
+    {
+        "id": 124,
+        "quiz": "Read",
+        "answer": "Lire",
+        "past_tense": "read",
+        "past_participle": "read"
+    },
+    {
+        "id": 125,
+        "quiz": "Build",
+        "answer": "Construire",
+        "past_tense": "built",
+        "past_participle": "built"
     }
 ]
