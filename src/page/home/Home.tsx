@@ -25,16 +25,11 @@ const Home = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       const db = await initDB();
-
-      // Essayer de récupérer les posts depuis IndexedDB
       const localPosts = await getPosts(db);
-      if (localPosts.length > 0) {
+      if (localPosts.length > 0 || localPosts.length < data.length) {
         setPosts(localPosts);
-        console.log(localPosts, posts);
-        console.log("local quiz : ", data);
       } else {
         await savePosts(db, data);
-        console.log(localPosts.length);
       }
     };
     fetchPosts();

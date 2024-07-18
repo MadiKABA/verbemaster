@@ -56,7 +56,7 @@ const LearningPage = () => {
           <Icon icon="ep:back" color="#3d83d9" width="24" />
         </button>
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/add_new_quiz_page")}
           className="btn_primary py-1 d-flex flex-column justify-content-center align-items-center fw-bold"
         >
           Add New QUIZ
@@ -78,6 +78,7 @@ const LearningPage = () => {
           />
         </div>
         <div className="row flex-grow-1">
+          <p className="fw-bold">Total Verbe : {listQuizFiltred.length}</p>
           <table className="table table-striped">
             <thead>
               <tr>
