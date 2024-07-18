@@ -227,7 +227,7 @@
         "id": 33,
         "quiz": "Thrive",
         "answer": "Prospérer",
-        "past_tense": "Throve",
+        "past_tense": "Thrived",
         "past_participle": "Thriven"
     },
     {
@@ -569,7 +569,7 @@
     {
         "id": 82,
         "quiz": "Stand",
-        "answer": "Être debout",
+        "answer": "Etre debout",
         "past_tense": "Stood",
         "past_participle": "Stood"
     },
@@ -633,8 +633,8 @@
         "id": 91,
         "quiz": "Thrive",
         "answer": "Prospérer",
-        "past_tense": "Throve",
-        "past_participle": "Thriven"
+        "past_tense": "Thrived",
+        "past_participle": "Thrived"
     },
     {
         "id": 92,
@@ -908,5 +908,47 @@
         "answer": "Dessiner",
         "past_tense": "drew",
         "past_participle": "drawn"
+    },
+    {
+        "id": 131,
+        "quiz": "Clothe",
+        "answer": "Habiller",
+        "past_tense": "clad",
+        "past_participle": "clad"
+    },
+    {
+        "id": 131,
+        "quiz": "See",
+        "answer": "Voir",
+        "past_tense": "saw",
+        "past_participle": "seen"
+    },
+    {
+        "id": 132,
+        "quiz": "Hold",
+        "answer": "Tenir",
+        "past_tense": "held",
+        "past_participle": "held"
+    },
+    {
+        "id": 133,
+        "quiz": "Wet",
+        "answer": "Mouiller",
+        "past_tense": "wetted",
+        "past_participle": "wet"
+    },
+    {
+        "id": 134,
+        "quiz": "Forsake",
+        "answer": "Abandoner",
+        "past_tense": "forsook",
+        "past_participle": "forsaken"
+    },
+    {
+        "id": 135,
+        "quiz": "Find",
+        "answer": "Trouver",
+        "past_tense": "found",
+        "past_participle": "found"
     }
 ]
