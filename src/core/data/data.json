@@ -435,10 +435,10 @@
     },
     {
         "id": 63,
-        "quiz": "Begin",
-        "answer": "Débuter",
-        "past_tense": "Began",
-        "past_participle": "Begun"
+        "quiz": "Sting",
+        "answer": "Piquer",
+        "past_tense": "Stung",
+        "past_participle": "Stung"
     },
     {
         "id": 64,
@@ -873,5 +873,40 @@
         "answer": "Construire",
         "past_tense": "built",
         "past_participle": "built"
+    },
+    {
+        "id": 126,
+        "quiz": "Tear",
+        "answer": "Déchirer",
+        "past_tense": "tore",
+        "past_participle": "torn"
+    },
+    {
+        "id": 127,
+        "quiz": "Bleed",
+        "answer": "Saigner",
+        "past_tense": "bled",
+        "past_participle": "bled"
+    },
+    {
+        "id": 128,
+        "quiz": "Set",
+        "answer": "Régler",
+        "past_tense": "set",
+        "past_participle": "set"
+    },
+    {
+        "id": 129,
+        "quiz": "Set",
+        "answer": "Régler",
+        "past_tense": "set",
+        "past_participle": "set"
+    },
+    {
+        "id": 130,
+        "quiz": "Draw",
+        "answer": "Dessiner",
+        "past_tense": "drew",
+        "past_participle": "drawn"
     }
 ]
