@@ -36,6 +36,8 @@ const AddNewQuiz: React.FC = () => {
     name: "entries",
   });
   const onSubmit = async (data: FormValues) => {
+    console.log(idLastQuiz);
+    
     const modifiedData = data.entries.map((item, index) => {
       return {
         ...item,
@@ -56,7 +58,7 @@ const AddNewQuiz: React.FC = () => {
       const db = await initDB();
       const localPosts = await getPosts(db);
       if (localPosts.length > 0) {
-        setIdLastQuiz(localPosts.length - 1);
+        setIdLastQuiz(localPosts.length);
       }
     };
     fetchPosts();
