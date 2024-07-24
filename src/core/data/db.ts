@@ -48,6 +48,13 @@ export const savePosts = async (db: IDBPDatabase, posts: NewQuiz[]): Promise<voi
   posts.forEach((post) => tx.store.put(post));
   await tx.done;
 };
+export const deleteItem = async (db: IDBPDatabase, id: number) => {
+  // const db = await dbPromise;
+  const tx = db.transaction(STORE_QUIZ, 'readwrite');
+  const store = tx.objectStore(STORE_QUIZ);
+
+  await store.delete(id);
+};
 export const clearPost = async (db: IDBPDatabase): Promise<void> => {
   const tx = db.transaction(STORE_QUIZ, "readwrite");
   await tx.store.clear();

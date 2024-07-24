@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
-import { getPosts, initDB } from "../../core/data/db";
+import { deleteItem, getPosts, initDB } from "../../core/data/db";
 import data from "../../core/data/data.json";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import { toast } from "react-toastify";
 
 interface Quiz {
   id: number;
@@ -45,6 +46,14 @@ const LearningPage = () => {
     };
     fetchPosts();
   }, []);
+  const onDeleted = async (id: number) => {
+    const db = await initDB();
+    await deleteItem(db, id);
+    toast.success("Quiz deleted success");
+    const localQuiz = await getPosts(db);
+    setListQuiz(localQuiz);
+    setListQuizFiltered(localQuiz);
+  };
   return (
     <div className="position-relative" id="home_page">
       <div className=" d-flex justify-content-between align-items-center px-2 py-3">
@@ -94,7 +103,19 @@ const LearningPage = () => {
                     <td>{quiz.quiz}</td>
                     <td>{quiz.answer}</td>
                     <td>{quiz.past_tense}</td>
-                    <td>{quiz.past_participle}</td>
+                    <td>
+                      {quiz.past_participle}{" "}
+                      <button
+                        onClick={() => onDeleted(quiz.id)}
+                        className="btn m-0 p-1 btn-danger"
+                      >
+                        <Icon
+                          icon="material-symbols:delete"
+                          color="#ffffff"
+                          width="20"
+                        />
+                      </button>
+                    </td>
                   </tr>
                 ))
               ) : (
