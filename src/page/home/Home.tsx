@@ -22,7 +22,7 @@ const Home = () => {
     const fetchPosts = async () => {
       const db = await initDB();
       const localPosts = await getPosts(db);
-      if (localPosts.length === 0 || localPosts.length <= data.length) {
+      if (localPosts.length === 0) {
         await clearPost(db);
         await savePosts(db, data);
       }
