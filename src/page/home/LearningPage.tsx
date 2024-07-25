@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import {
   clearLastQuiz,
+  clearPost,
   deleteItem,
   getPosts,
   initDB,
@@ -60,6 +61,19 @@ const LearningPage = () => {
     setListQuiz(localQuiz);
     setListQuizFiltered(localQuiz);
   };
+  const onClearData = async () => {
+    const db = await initDB();
+    await clearLastQuiz(db);
+    await clearPost(db);
+    const localQuiz = await getPosts(db);
+    if (localQuiz.length > 0) {
+      setListQuiz(localQuiz);
+      setListQuizFiltered(localQuiz);
+    } else {
+      setListQuiz(data);
+      setListQuizFiltered(data);
+    }
+  };
   return (
     <div className="position-relative" id="home_page">
       <div className=" d-flex justify-content-between align-items-center px-2 py-3">
@@ -80,6 +94,12 @@ const LearningPage = () => {
         <h1 className="title_home_page">Learn</h1>
       </div>
       <div className="content_cta_home_page d-flex flex-column flex-grow-1 pt-5">
+        <div>
+          <button onClick={onClearData} className="btn m-0 p-1 btn-danger">
+            <Icon icon="material-symbols:delete" color="#ffffff" width="20" />{" "}
+            <span>Clear DataBase</span>
+          </button>
+        </div>
         <div className="content_input_quiz">
           <label htmlFor="">
             Filter by quiz, past tense, or past participle{" "}
