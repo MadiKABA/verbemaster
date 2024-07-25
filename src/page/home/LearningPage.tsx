@@ -94,7 +94,7 @@ const LearningPage = () => {
         <h1 className="title_home_page">Learn</h1>
       </div>
       <div className="content_cta_home_page d-flex flex-column flex-grow-1 pt-5">
-        <div>
+        <div className="pb-3">
           <button onClick={onClearData} className="btn m-0 p-1 btn-danger">
             <Icon icon="material-symbols:delete" color="#ffffff" width="20" />{" "}
             <span>Clear DataBase</span>
