@@ -48,7 +48,8 @@ const QuizPage: React.FC = () => {
         setLastQuiz(valueLastQuiz[0]);
       } else {
         if (!newQuiz && !lastQuiz) {
-          const result = await getItemById(1);
+          const localQuiz = await getPosts(db);
+          const result = await getItemById(localQuiz[0].id);
           if (result) {
             setNewQuiz(result);
             setLastQuiz(result);
@@ -145,18 +146,57 @@ const QuizPage: React.FC = () => {
               await saveResulttQuiz(db, resultQuiz);
               await clearLastQuiz(db);
               await saveLastQuiz(db, newQuiz);
-              const result = await getItemById(newQuiz.id + 1);
-              if (result) {
-                setNewQuiz(result);
-                setLastQuiz(result);
+              const filteredData = listQuiz.filter(
+                (item) =>
+                  item.quiz
+                    .toLowerCase()
+                    .includes(newQuiz.quiz.toLowerCase()) &&
+                  item.answer
+                    .toLowerCase()
+                    .includes(newQuiz.answer.toLowerCase()) &&
+                  item.past_tense
+                    .toLowerCase()
+                    .includes(newQuiz.past_tense.toLowerCase()) &&
+                  item.past_participle
+                    .toLowerCase()
+                    .includes(newQuiz.past_participle.toLowerCase())
+              );
+
+              console.log(filteredData);
+              if (filteredData.length > 0) {
+                const firstFilteredItem = filteredData[0];
+
+                // Étape 3: Trouver l'index de cet élément dans le tableau initial
+                const indexInOriginal = listQuiz.findIndex(
+                  (item) => item.id === firstFilteredItem.id
+                );
+
+                // Étape 4: Récupérer l'élément suivant dans le tableau initial (s'il existe)
+                if (
+                  indexInOriginal !== -1 &&
+                  indexInOriginal < listQuiz.length - 1
+                ) {
+                  const nextItem = listQuiz[indexInOriginal + 1];
+                  const result = await getItemById(nextItem.id);
+                  if (result) {
+                    setNewQuiz(result);
+                    setLastQuiz(result);
+                  }
+                } else {
+                  await clearLastQuiz(db);
+                  navigate("/end_quiz_page");
+                }
+              } else {
+                await clearLastQuiz(db);
+                navigate("/end_quiz_page");
               }
+
               setAttempts(0);
             }
           }
         }
       }
       setError(false);
-      console.log(answerQuiz);
     }
   };
   return (

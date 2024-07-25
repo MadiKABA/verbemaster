@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 
-import { deleteItem, getPosts, initDB } from "../../core/data/db";
+import {
+  clearLastQuiz,
+  deleteItem,
+  getPosts,
+  initDB,
+} from "../../core/data/db";
 import data from "../../core/data/data.json";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
@@ -50,6 +55,7 @@ const LearningPage = () => {
     const db = await initDB();
     await deleteItem(db, id);
     toast.success("Quiz deleted success");
+    await clearLastQuiz(db);
     const localQuiz = await getPosts(db);
     setListQuiz(localQuiz);
     setListQuizFiltered(localQuiz);
