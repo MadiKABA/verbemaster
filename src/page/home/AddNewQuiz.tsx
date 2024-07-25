@@ -39,10 +39,10 @@ const AddNewQuiz: React.FC = () => {
     const db = await initDB();
     const localPosts = await getPosts(db);
     console.log(localPosts[localPosts.length]);
-    const modifiedData = data.entries.map((item) => {
+    const modifiedData = data.entries.map((item, index) => {
       return {
         ...item,
-        id: localPosts[localPosts.length - 1].id + 1,
+        id: localPosts[localPosts.length - 1].id + index + 1,
       };
     });
     await savePosts(db, modifiedData);
