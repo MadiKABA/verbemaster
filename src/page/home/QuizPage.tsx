@@ -63,7 +63,6 @@ const QuizPage: React.FC = () => {
       //   const result = await getItemById(78);
       if (localPosts.length > 0) {
         // setPosts(localPosts);
-        // console.log(localPosts);
       } else {
         // await savePosts(db, postsData);
         console.log(localPosts.length);
@@ -106,16 +105,61 @@ const QuizPage: React.FC = () => {
             await clearLastQuiz(db);
             navigate("/end_quiz_page");
           } else {
-            const result = await getItemById(newQuiz.id + 1);
-            if (result) {
-              setNewQuiz(result);
-              setLastQuiz(result);
-              setAnswerQuiz({
-                answer: "",
-                past_participle: "",
-                past_tense: "",
-              });
+            const filteredData = listQuiz.filter(
+              (item) =>
+                item.quiz.toLowerCase().includes(newQuiz.quiz.toLowerCase()) &&
+                item.answer
+                  .toLowerCase()
+                  .includes(newQuiz.answer.toLowerCase()) &&
+                item.past_tense
+                  .toLowerCase()
+                  .includes(newQuiz.past_tense.toLowerCase()) &&
+                item.past_participle
+                  .toLowerCase()
+                  .includes(newQuiz.past_participle.toLowerCase())
+            );
+
+            if (filteredData.length > 0) {
+              const firstFilteredItem = filteredData[0];
+
+              // Étape 3: Trouver l'index de cet élément dans le tableau initial
+              const indexInOriginal = listQuiz.findIndex(
+                (item) => item.id === firstFilteredItem.id
+              );
+
+              // Étape 4: Récupérer l'élément suivant dans le tableau initial (s'il existe)
+              if (
+                indexInOriginal !== -1 &&
+                indexInOriginal < listQuiz.length - 1
+              ) {
+                const nextItem = listQuiz[indexInOriginal + 1];
+                const result = await getItemById(nextItem.id);
+                if (result) {
+                  setNewQuiz(result);
+                  setLastQuiz(result);
+                  setAnswerQuiz({
+                    answer: "",
+                    past_participle: "",
+                    past_tense: "",
+                  });
+                }
+              } else {
+                await clearLastQuiz(db);
+                navigate("/end_quiz_page");
+              }
             }
+            // const result = await getItemById(newQuiz.id + 1);
+            // if (result) {
+            //   setNewQuiz(result);
+            //   setLastQuiz(result);
+            //   setAnswerQuiz({
+            //     answer: "",
+            //     past_participle: "",
+            //     past_tense: "",
+            //   });
+            // } else {
+            //   alert(true);
+            // }
           }
         } else {
           const db = await initDB();
@@ -162,7 +206,6 @@ const QuizPage: React.FC = () => {
                     .includes(newQuiz.past_participle.toLowerCase())
               );
 
-              console.log(filteredData);
               if (filteredData.length > 0) {
                 const firstFilteredItem = filteredData[0];
 

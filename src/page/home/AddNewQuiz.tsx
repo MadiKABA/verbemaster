@@ -36,15 +36,15 @@ const AddNewQuiz: React.FC = () => {
     name: "entries",
   });
   const onSubmit = async (data: FormValues) => {
-    console.log(idLastQuiz);
-    
-    const modifiedData = data.entries.map((item, index) => {
+    const db = await initDB();
+    const localPosts = await getPosts(db);
+    console.log(localPosts[localPosts.length]);
+    const modifiedData = data.entries.map((item) => {
       return {
         ...item,
-        id: idLastQuiz + index + 1,
+        id: localPosts[localPosts.length - 1].id + 1,
       };
     });
-    const db = await initDB();
     await savePosts(db, modifiedData);
     toast.success("Quiz creating success");
     setTimeout(() => {
@@ -57,8 +57,12 @@ const AddNewQuiz: React.FC = () => {
     const fetchPosts = async () => {
       const db = await initDB();
       const localPosts = await getPosts(db);
+      console.log(localPosts);
+
       if (localPosts.length > 0) {
-        setIdLastQuiz(localPosts.length);
+        console.log(localPosts.length);
+
+        setIdLastQuiz(localPosts[localPosts.length].id);
       }
     };
     fetchPosts();

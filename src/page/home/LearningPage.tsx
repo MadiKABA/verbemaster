@@ -56,7 +56,7 @@ const LearningPage = () => {
     const db = await initDB();
     await deleteItem(db, id);
     toast.success("Quiz deleted success");
-    await clearLastQuiz(db);
+    // await clearLastQuiz(db);
     const localQuiz = await getPosts(db);
     setListQuiz(localQuiz);
     setListQuizFiltered(localQuiz);
